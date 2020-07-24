@@ -19,7 +19,7 @@ Make sure you have [Node](https://nodejs.org/en/) installed on your local develo
 
 `git clone https://github.com/FusionAuth/fusionauth-example-vue.git`
 - Create a new Application in your FusionAuth dashboard.
-- In yoour application **OAuth** tab: 
+- In your application **OAuth** tab: 
    - Set `Authorized redirect URLs` to `http://localhost:9000/oauth-callback`
    - Set `Logout URL` to `http://localhost:8081`
  - Select Users on the dashboard, select **Manage** and go to the **Registration** tab. Then click `Add Registration`, and add yourself to the application you just created.
