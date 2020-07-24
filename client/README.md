@@ -1,4 +1,4 @@
-# client
+# Vue Client
 
 ## Project setup
 ```
