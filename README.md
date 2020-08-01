@@ -37,7 +37,7 @@ API_KEY = ''
 ```
 You can read how to create an API KEY [here](https://fusionauth.io/docs/v1/tech/apis/authentication).
 
-- Make sure FusionAuth is running, then install dependencies and start the app. The Vue app should automatically open in your browser at http://localhost:8081.
+- Make sure FusionAuth is running, then install dependencies and start the app. The Vue app should automatically open in your browser at http://localhost:8080.
 ```bash
 cd server
 npm install
