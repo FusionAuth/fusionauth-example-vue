@@ -42,7 +42,7 @@ if (stateFromServer !== req.session.stateValue) {
       req.session.token = result.data.access_token;
 
       //redirect to Vue app
-     res.redirect(`http://localhost:8080`);
+     res.redirect(`http://localhost:8081`);
     })
     .catch((err) => {
       console.error(err);
