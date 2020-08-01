@@ -21,7 +21,7 @@ Make sure you have [Node](https://nodejs.org/en/) installed on your local develo
 - Create a new Application in your FusionAuth dashboard.
 - In your application **OAuth** tab: 
    - Set `Authorized redirect URLs` to `http://localhost:9000/oauth-callback`
-   - Set `Logout URL` to `http://localhost:8081`
+   - Set `Logout URL` to `http://localhost:8080`
  - Select Users on the dashboard, select **Manage** and go to the **Registration** tab. Then click `Add Registration`, and add yourself to the application you just created.
  
 - Copy your app's **Client ID**, **Client Secret**, **Redirect URI**, **Application ID**, and **API Key** into the `server/.env.example` file, you will also need to rename `.env.example` to `.env`
