@@ -3,6 +3,9 @@
 
 <img src="https://i.imgur.com/ZlHi4x3.gif" alt="finished_application" width="400px" height="400px" align="right">
 
+# Blog post
+
+You can read full instructions with additional info and context here: https://fusionauth.io/blog/2020/08/06/securely-implement-oauth-vuejs
 
 # Setup
 Following setup is required before running the application.
@@ -51,3 +54,4 @@ npm run serve
 _Your application is now running and you will be prompted to `Sign In`._
 
 ### Happy Coding
+
