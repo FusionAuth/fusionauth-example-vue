@@ -5,7 +5,9 @@
 
 # Blog post
 
-You can read full instructions with additional info and context here: https://fusionauth.io/blog/2020/08/06/securely-implement-oauth-vuejs
+You can read full instructions with additional info and context on the blog post: https://fusionauth.io/blog/2020/08/06/securely-implement-oauth-vuejs
+
+This application will use an OAuth Authorization Code workflow and the PKCE extension to log users in and an express backend server to store your access token securely. PKCE stands for Proof Key for Code Exchange, and is often pronounced “pixie”.
 
 # Setup
 Following setup is required before running the application.
