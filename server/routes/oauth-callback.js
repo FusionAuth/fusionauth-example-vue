@@ -14,12 +14,12 @@ router.get("/", (req, res) => {
 // State from Server
     const stateFromServer = req.query.state;
     console.log(req.session.stateValue)
-    // if (stateFromServer !== req.session.stateValue) {
-    //     console.log("State doesn't match. uh-oh.");
-    //     console.log(`Saw: ${stateFromServer}, but expected: &{req.session.stateValue}`);
-    //     res.redirect(302, '/');
-    //     return;
-    // }
+    if (stateFromServer !== req.session.stateValue) {
+        console.log("State doesn't match. uh-oh.");
+        console.log(`Saw: ${stateFromServer}, but expected: &{req.session.stateValue}`);
+        res.redirect(302, '/');
+        return;
+    }
     //post request to /token endpoint
     axios
         .post(
