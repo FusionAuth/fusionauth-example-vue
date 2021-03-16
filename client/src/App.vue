@@ -4,8 +4,8 @@
       <h1>FusionAuth Example Vue</h1>
     </header>
     <div id="container">
-      <Greet v-bind:email="email" />
-      <Login v-bind:email="email" />
+      <Greet v-bind:email="email" v-bind:authState="authState" />
+      <Login v-bind:email="email" v-bind:showSignOut="showSignOut"  />
       <Update v-if="email" />
     </div>
   </div>
@@ -26,21 +26,34 @@ export default {
     return {
       email: null,
       body: null,
+      showSignOut: false,
+      authState: null
     };
   },
 
-  mounted() {
+mounted() {
   fetch(`http://localhost:9000/user`, {
     credentials: "include" // fetch won't send cookies unless you set credentials
   })
-  .then((response) => response.json())
-  .then((data) => {
-    this.email = data.introspectResponse.email;
-    this.body= data.body;
-    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.authState == "Authorized"){
+          this.email = data.introspectResponse.email;
+          this.body = data.body;
+          this.showSignOut = true
+        }
+        else if (data.authState == "notAuthorized"){
+          this.showSignOut = true
+        }
+        else if (data.authState == "notAuthenticated"){
+          this.showSignOut = false
+        }
+        this.authState = data.authState
+      });
 }
+
 }
-  
+
 
 </script>
 <style>
