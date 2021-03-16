@@ -38,3 +38,6 @@ app.get("/", (req, res) => {
      message:"FusionAuth Example With Vue"
     });
 });
+
+// routes
+app.use('/user', require('./routes/user'))
