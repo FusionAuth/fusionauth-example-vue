@@ -17,17 +17,24 @@ export default {
   },
   data() {
     return {
-      email: null
+      email: null,
+      body: null,
     };
   },
+
   mounted() {
-    fetch(`http://localhost:9000/user`, {
-      credentials: "include" // fetch won't send cookies unless you set credentials
+  fetch(`http://localhost:9000/user`, {
+    credentials: "include" // fetch won't send cookies unless you set credentials
+  })
+  .then((response) => response.json())
+  .then((data) => {
+    this.email = data.introspectResponse.email;
+    this.body= data.body;
     })
-      .then(response => response.json())
-      .then(data => (this.email = data.user.email));
-  }
-};
+}
+}
+  
+
 </script>
 <style>
 h1 {
