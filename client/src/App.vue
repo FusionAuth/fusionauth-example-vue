@@ -5,15 +5,19 @@
     </header>
     <div id="container">
       <Greet v-bind:email="email" />
+      <Login v-bind:email="email" />
     </div>
   </div>
 </template>
 <script>
 import Greet from "./Greeting";
+import Login from "./Login";
+
 export default {
   name: "app",
   components: {
-    Greet
+    Greet,
+    Login
   },
   data() {
     return {
