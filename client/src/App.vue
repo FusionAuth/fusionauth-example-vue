@@ -6,18 +6,21 @@
     <div id="container">
       <Greet v-bind:email="email" />
       <Login v-bind:email="email" />
+      <Update v-if="email" />
     </div>
   </div>
 </template>
 <script>
 import Greet from "./Greeting";
 import Login from "./Login";
+import Update from "./Update";
 
 export default {
   name: "app",
   components: {
     Greet,
-    Login
+    Login,
+    Update
   },
   data() {
     return {
