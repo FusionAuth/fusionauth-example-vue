@@ -41,3 +41,4 @@ app.get("/", (req, res) => {
 
 // routes
 app.use('/user', require('./routes/user'))
+app.use('/login', require('./routes/login'))
