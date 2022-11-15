@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     update: function() {
-      fetch(`http://localhost:9000/set-user-data`, {
+      fetch(`http://localhost:3000/set-user-data`, {
         credentials: "include",
         method: "POST",
         headers: {

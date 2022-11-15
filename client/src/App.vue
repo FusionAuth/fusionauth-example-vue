@@ -32,7 +32,7 @@ export default {
   },
 
 mounted() {
-  fetch(`http://localhost:9000/user`, {
+  fetch(`http://localhost:3000/user`, {
     credentials: "include" // fetch won't send cookies unless you set credentials
   })
       .then((response) => response.json())

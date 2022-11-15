@@ -11,14 +11,18 @@ const config = {
 const url = `http://localhost:${process.env.FUSIONAUTH_PORT}/oauth2/token`;
 
 router.get("/", (req, res) => {
-// State from Server
-const stateFromServer = req.query.state;
-if (stateFromServer !== req.session.stateValue) {
-  console.log("State doesn't match. uh-oh.");
-  console.log(`Saw: ${stateFromServer}, but expected: &{req.session.stateValue}`);
-  res.redirect(302, '/');
-  return;
-}
+  // State from Server
+  const stateFromServer = req.query.state;
+  if (stateFromServer !== req.session.stateValue) {
+    console.log("State doesn't match. uh-oh.");
+    console.log(`Saw: ${stateFromServer}, but expected: &{req.session.stateValue}`);
+    res.redirect(302, '/');
+    return;
+  }
+  else {
+    console.log("State is good");
+  }
+
   //post request to /token endpoint
   axios
     .post(
@@ -33,14 +37,14 @@ if (stateFromServer !== req.session.stateValue) {
       config
     )
     .then((result) => {
-
       // save token to session
       req.session.token = result.data.access_token;
-      console.log(result)
+      console.log(`result.data: ${JSON.stringify(result.data)}`)
       //redirect to Vue app
-     res.redirect(`http://localhost:8081`);
+     res.redirect(`http://localhost:8080`);
     })
     .catch((err) => {
+      console.log("*************************************** ERROR");
       console.error(err);
     });
 });
