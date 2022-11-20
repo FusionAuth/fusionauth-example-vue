@@ -27,31 +27,30 @@ export default {
       email: null,
       body: null,
       showSignOut: false,
-      authState: null
+      authState: "notAuthenticated"
     };
   },
-
-mounted() {
-  fetch(`http://localhost:3000/user`, {
-    credentials: "include" // fetch won't send cookies unless you set credentials
-  })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.authState == "Authorized"){
-          this.email = data.introspectResponse.email;
-          this.body = data.body;
-          this.showSignOut = true
-        }
-        else if (data.authState == "notAuthorized"){
-          this.showSignOut = true
-        }
-        else if (data.authState == "notAuthenticated"){
-          this.showSignOut = false
-        }
-        this.authState = data.authState
-      });
-}
-
+  mounted() {
+    fetch(`http://localhost:3000/user`, {
+      credentials: "include" // fetch won't send cookies unless you set credentials
+    })
+    .then((response) => response.json() )
+    .then((data) => {
+      console.log("data:", data, "authState:", data.authState);
+      if (data.authState == "Authorized") {
+        this.email = data.introspectResponse.email;
+        this.body = data.body;
+        this.showSignOut = true
+      }
+      else if (data.authState == "notAuthorized"){
+        this.showSignOut = true
+      }
+      else if (data.authState == "notAuthenticated"){
+        this.showSignOut = false
+      }
+      this.authState = data.authState
+    });
+  }
 }
 
 
@@ -70,4 +69,4 @@ h1 {
   height: 400px;
   margin: auto;
 }
-</style>
+</style>  

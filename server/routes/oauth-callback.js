@@ -23,6 +23,8 @@ router.get("/", (req, res) => {
     console.log("State is good");
   }
 
+  console.log("Attempting /token POST", process.env.CLIENT_ID, process.env.CLIENT_SECRET, req.query.code, process.env.REDIRECT_URI);
+
   //post request to /token endpoint
   axios
     .post(
@@ -41,7 +43,8 @@ router.get("/", (req, res) => {
       req.session.token = result.data.access_token;
       console.log(`result.data: ${JSON.stringify(result.data)}`)
       //redirect to Vue app
-     res.redirect(`http://localhost:8080`);
+      console.log('redirecting');
+      res.redirect(`http://localhost:8080`);
     })
     .catch((err) => {
       console.log("*************************************** ERROR");

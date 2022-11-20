@@ -1,7 +1,6 @@
 {
     "variables": {
         "applicationId": "E9FDB985-9173-4E01-9D73-AC2D60D1DC8E",
-        "applicationSecret": "this_really_should_be_regenerated_every_so_often",
         "apiKey": "this_really_should_be_a_long_random_alphanumeric_value_but_this_still_works",
         "asymmetricKeyId": "#{UUID()}",
         "defaultTenantId": "d7d09513-a3f5-401c-9685-34ab6c552453",
@@ -55,7 +54,7 @@
                 "name": "exampleapp",
                 "oauthConfiguration" : {
                     "authorizedRedirectURLs": ["http://localhost:3000/oauth-callback"],
-                    "clientSecret": "#{applicationSecret}",
+                    "clientSecret": "this_really_should_be_regenerated_every_so_often",
                     "logoutURL": "http://localhost:8080",
                     "enabledGrants": ["authorization_code"]
                 },
