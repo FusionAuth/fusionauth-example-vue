@@ -1,3 +1,6 @@
+**This repo is out of date and is archived. Check out [an updated tutorial on using FusionAuth with Vue](https://fusionauth.io/docs/quickstarts/quickstart-javascript-vue-web) or [the updated GitHub repository](https://github.com/fusionauth/fusionauth-quickstart-javascript-vue-web).**
+
+
 # FusionAuth Example Vue
  Vue.js and Express example application that uses the OAuth 2 Authorization Code grant. 
 
